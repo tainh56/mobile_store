@@ -34,30 +34,30 @@ $query_run = mysql_query($query);
                 <tdbody>
                     <?php
                     while ($row = mysql_fetch_array($query_run)) {
-                        echo "<tr class='success'>";
-                        echo "<td>" . $row['id_mat_hang'] . "</td>";
-                        echo "<td>" . $row['ten_mat_hang'] . "</td>";
-                        echo "<td>" . $row['so_luong'] . "</td>";
-                        echo "<td>" . $row['gia_ban'] . "</td>";
-                        echo "<td>" . $row['gia_nhap'] . "</td>";
-                        echo "<td>" . $row['he_dieu_hanh'] . "</td>";
-                        echo "<td>" . $row['cpu'] . "</td>";
-                        echo "<td>" . $row['ram'] . "</td>";
-                        echo "<td>" . $row['bo_nho_trong'] . "</td>";
-                        echo "<td>" . $row['bo_nho_ngoai'] . "</td>";
-                        echo "<td>" . $row['camera'] . "</td>";
-                        echo "<td>" . $row['bao_hanh'] . "</td>";
-                        echo "<td>" . $row['dung_luong_pin'] . "</td>";
-                        $link = 'SuaMatHang.php?id=' . $row['id_mat_hang']; 
-                        echo "<td><a href=$link ><i class='fa fa-pencil'></i></a></td>";
-                        $link = 'XoaMatHang.php?id=' . $row['id_mat_hang'];
-                        echo "<td><a href=$link><i class='fa fa-times'></i></a></td>";
-                        echo "</tr>";
                         ?>
-                    </tdbody>
-                </table>
-                <?php
-            }
+                        <tr class='success'>
+                            <td><?php echo $row['id_mat_hang']; ?></td>
+                            <td><?php echo $row['ten_mat_hang']; ?></td>
+                            <td><?php echo $row['so_luong']; ?></td>
+                            <td><?php echo $row['gia_ban']; ?></td>
+                            <td><?php echo $row['gia_nhap']; ?></td>
+                            <td><?php echo $row['he_dieu_hanh']; ?></td>
+                            <td><?php echo $row['cpu']; ?></td>
+                            <td><?php echo $row['ram']; ?></td>
+                            <td><?php echo $row['bo_nho_trong']; ?></td>
+                            <td><?php echo $row['bo_nho_ngoai']; ?></td>
+                            <td><?php echo $row['camera']; ?></td>
+                            <td><?php echo $row['bao_hanh']; ?></td>
+                            <td><?php echo $row['dung_luong_pin']; ?></td> 
+                            <td><a href=<?php echo "SuaMatHang.php?id=" . $row['id_mat_hang'] ?>><i class='fa fa-pencil'></i></a></td>
+                            <td><a href=<?php echo "XoaMatHang.php?id=" . $row['id_mat_hang'] ?>><i class='fa fa-times'></i></a></td>
+                        </tr>
+                        <?php
+                    }
+                    ?>
+                </tdbody>
+            </table>
+            <?php
             echo "<br />";
             mysql_close();
             ?>

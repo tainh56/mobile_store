@@ -1,9 +1,10 @@
+<?php include '../includes/connect-database.php'; ?>
 <html>
     <?php include '../includes/head.php'; ?>
     <body>
         <div class="container">
             <h2>THÊM MỚI MẶT HÀNG:</h2>
-            <form class="container">
+            <form class="container" action="ThemMatHang.php" method="post">
                 <table class="table-condensed">
                     <tr>
                         <td>Tên mặt hàng: </td>
@@ -61,3 +62,37 @@
         </div>
     </body>
 </html>
+<?php
+if (isset($_POST['ten-mat-hang']) && isset($_POST['so-luong']) && isset($_POST['gia-ban']) && isset($_POST['gia-nhap'])) {
+    echo "yes<br />";
+    $sql = "insert into mat_hang (ten_mat_hang, "
+            . "so_luong, "
+            . "gia_ban, "
+            . "gia_nhap, "
+            . "he_dieu_hanh, "
+            . "cpu, "
+            . "ram, "
+            . "bo_nho_trong, "
+            . "bo_nho_ngoai, "
+            . "camera, "
+            . "bao_hanh, "
+            . "dung_luong_pin"
+            . ") "
+            . "values ("
+            . "'" . $_POST['ten-mat-hang'] . "', "
+            . "'" . $_POST['so-luong'] . "', "
+            . "'" . $_POST['gia-ban'] . "', "
+            . "'" . $_POST['gia-nhap'] . "', "
+            . "'" . $_POST['he-dieu-hanh'] . "', "
+            . "'" . $_POST['cpu'] . "', "
+            . "'" . $_POST['ram'] . "', "
+            . "'" . $_POST['bo-nho-trong'] . "', "
+            . "'" . $_POST['bo-nho-ngoai'] . "', "
+            . "'" . $_POST['camera'] . "', "
+            . "'" . $_POST['bao-hanh'] . "', "
+            . "'" . $_POST['dung-luong-pin'] . "'"
+            . ")";
+    mysql_query($sql);
+    mysql_close();
+}
+?>
