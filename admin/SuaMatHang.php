@@ -9,7 +9,7 @@ $query = mysql_query($sql);
     <body>
         <div class="container">
             <h2>THÊM MỚI MẶT HÀNG:</h2>
-            <form class="container">
+            <form class="container" action="" method="post">
                 <table class="table-condensed">
                     <?php
                     while ($row = mysql_fetch_array($query)) {
@@ -64,7 +64,6 @@ $query = mysql_query($sql);
                         </tr>
                         <?php
                     }
-                    mysql_close();
                     ?>
                     <tr>
                         <td><input type="submit" value="submit" class="btn-primary" /></td>
@@ -74,3 +73,23 @@ $query = mysql_query($sql);
         </div>
     </body>
 </html>
+<?php
+$sql = "update mat_hang set "
+        . "ten_mat_hang = '" . $_POST['ten-mat-hang'] . "', "
+        . "so_luong = '" . $_POST['so-luong'] . "', "
+        . "gia_ban = '" . $_POST['gia-ban'] . "', "
+        . "gia_nhap = '" . $_POST['gia-nhap'] . "', "
+        . "he_dieu_hanh = '" . $_POST['he-dieu-hanh'] . "', "
+        . "cpu = '" . $_POST['cpu'] . "', "
+        . "ram = '" . $_POST['ram'] . "', "
+        . "bo_nho_trong = '" . $_POST['bo-nho-trong'] . "', "
+        . "bo_nho_ngoai = '" . $_POST['bo-nho-ngoai'] . "', "
+        . "ten_mat_hang = '" . $_POST['ten-mat-hang'] . "', "
+        . "camera = '" . $_POST['camera'] . "', "
+        . "bao_hanh = '" . $_POST['bao-hanh'] . "', "
+        . "dung_luong_pin = '" . $_POST['dung-luong-pin'] . "' "
+        . "where id_mat_hang = '" . $id . "'";
+echo $sql;
+mysql_query($sql);
+mysql_close();
+?>
