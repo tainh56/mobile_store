@@ -13,22 +13,21 @@ $query_run = mysql_query($query);
             <table class="table table-bordered table-hover table-condensed">
                 <tdhead>
                     <tr>
-                        <td>Id mặt hàng</td>
-                        <td>Tên mặt hàng</td>
-                        <td>Số lượng</td>
-                        <td>Giá bán</td>
-                        <td>Giá nhập</td>
-                        <td>Hệ điều hành</td>
-                        <td>CPU</td>
-                        <td>Ram</td>
-                        <td>Bộ nhớ trong</td>
-                        <td>Bộ nhớ ngoài</td>
-                        <td>Camera</td>
-                        <td>Bảo hành</td>
-                        <td>Dung lượng pin</td>
-                        <td>Sửa</td>
-                        <td>Xóa</td>
-
+                        <th>Id mặt hàng</th>
+                        <th>Tên mặt hàng</th>
+                        <th>Số lượng</th>
+                        <th>Giá bán</th>
+                        <th>Giá nhập</th>
+                        <th>Hệ điều hành</th>
+                        <th>CPU</th>
+                        <th>Ram</th>
+                        <th>Bộ nhớ trong</th>
+                        <th>Bộ nhớ ngoài</th>
+                        <th>Camera</th>
+                        <th>Bảo hành</th>
+                        <th>Dung lượng pin</th>
+                        <th>Sửa</th>
+                        <th>Xóa</th>
                     </tr>
                 </tdhead>
                 <tdbody>
